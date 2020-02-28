@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Will it rain tomorrow -- ML predictions</title>
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <!-- we can use some css if we want -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      </head>
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+<h3>Predict if it will rain tomorrow based on today's weather</h3>
+        </div>
+<!-- end column div -->
+    </div>
+    <!-- end row div  -->
+    <div class='row'>
+<div class='col-md-4'>
+<h6>Today's Weather inputs:</h6>
+<p>Min Temp:
+<select id='min_temp'></select></p>
+<p>Max Temp:
+<select id='max_temp'></select></p>
+<p>rainfall:
+<select id='rainfall'></select></p>
+<p>Evaporation:
+<select id='Evaporation'></select></p>
+<p>Sunshine:
+<select id='Sunshine'></select></p>
+<p>Wind Gust Speed:
+<select id='WindGustSpeed'></select></p>
+<p>Wind Speed 9 AM
+<select id=wind_speed_9a></select></p>
+<p>Wind Speed 3 PM
+<select id=wind_speed_3></select></p>
+<p>Hummidity 9 AM
+<select id='Hummidity_9'></select></p>
+<p>Humidity 3 PM
+<select id='Hummidity_3'></select></p>
+
+</div>
+<!-- end of column div  -->
+<div class='col-md-4'>
+    <p>Pressure 9 AM:
+    <select id='pressure_9'></select></p>
+    <P>Pressure 3 PM:
+    <select id='pressure_3'></select></P>
+    <p>Clouds 9 AM:
+    <select id='cloud_9'></select></p>
+    <p>Clouds 3 PM:
+    <select id=cloud_3></select></p>
+    <p>Tempeture 9 AM:
+    <select id='temp_9'></select></p>
+    <p>Tempeture 3 PM:
+    <select id='temp_3'></select></p>
+    <p>Rain today:
+    <select id='rain_today'></select></p>
+    <!-- consider dropping -->
+    <p>Wind Gust Direction:
+    <select id='wind_gust_dir'></select></p>
+    <p>Wind Direction 9 AM:
+    <select id='wind_direction_9'></select></p>
+    <p>Wind Direction 3 PM:
+    <select id='wind_direction_3'></select></p>
+
+</div>
+<!-- end of column div -->
+    </div>
+    <!-- end row div -->
+
+
+</div><!--end container -->
+    
+
+</html>
