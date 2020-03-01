@@ -199,6 +199,7 @@ d3.select("#cloud_3")
 .text(function(d){return d})
 .attr("value", function(d){return d});
 
+function getInputValues(){
 var cloud_3 = d3.select('#cloud_3').property('value')
 var cloud_9 = d3.select('#cloud_9').property('value')
 var pressure_3 = d3.select("#pressure_3").property('value')
@@ -218,3 +219,60 @@ var min_temp = d3.select('#min_temp').property('value')
 var wind_direction_3 = d3.select('#wind_direction_3').property('value')
 var wind_direction_9 = d3.select('#wind_direction_9').property('value')
 var wind_gust_dir = d3.select('#wind_gust_dir').property('value')
+
+if (rainfall === 0){
+    var rainToday = 'False'
+} else { 
+    var rainToday = 'True'
+}
+
+getPrediction(min_temp, max_temp, rainfall, Evaporation, Sunshine, WindGustSpeed,
+    wind_speed_9a, wind_speed_3, Hummidity_9, Hummidity_3, pressure_9,
+    pressure_3, cloud_9, cloud_3, temp_9, temp_3, rainToday, 
+    wind_gust_dir, wind_direction_9, wind_direction_3)
+}
+// submitButton
+
+var predictButton = d3.select('#submitButton')
+
+predictButton.on("click", getInputValues)
+
+//'/predict/<min_temp>/<max_temp>/<rainfall>/<evaporation>/<sunshine>/
+// <wind_gust_speed>/<wind_speed_9>/<wind_speed_3>/<humidity_9>/<humidity_3>/
+// <pressure_9>/<pressure_3>/<cloud_9>/<cloud_3>/<temp_9>/<temp_3>/<rain_today_b>/
+// <wind_gust_dir>/<wind_dir_9>/<wind_dir_3>'
+
+function getPrediction(minTemp, maxTemp, rainfall, evaporation, sunshine,
+    windGustSpeed, windSpeed9, windSpeed3, humidity9, humidity3, pressure9, 
+    pressure3, cloud9, cloud3, temp9, temp3, rainToday, windGustDir,
+    windDir9, windDir3){
+        url1 = `http://localhost:5000/predict/${minTemp}/${rainfall}/${evaporation}/${sunshine}/`
+        url2 = `${windGustSpeed}/${windSpeed9}/${windSpeed3}/${humidity9}/${humidity3}/${pressure9}/`
+        url3 = `${pressure3}/${cloud9}/${cloud3}/${temp9}/${temp3}/${rainToday}/${windGustDir}/`
+        url4 = `${windDir9}/${windDir3}`
+        url = url1 + url2 + url3 + url4
+        console.log(url)
+    }
+
+function followers(start, end){
+    var followers_url = `http://localhost:5000/api/data/followers/${start}/${end}`
+    var b1 = d3.json(followers_url).then(function(followers_data){
+        var followers = followers_data[0]
+        
+        var trace = {
+            type: "scatter",
+            mode: "lines",
+            x: followers.dates,
+            y: followers.average_num_of_followers
+        }
+        var data = [trace]
+        var layout = {
+            title: `Average No of Followers - ${start} to ${end}`
+        }
+        Plotly.newPlot('num_followers', data, layout)
+ 
+
+
+    })
+ 
+}
