@@ -92,59 +92,46 @@ def weather_predict(min_temp, max_temp, rainfall, evaporation, sunshine, wind_gu
     rf_predict = rf_model.predict(rf_transformed)
     svm_predict = svm_model.predict(mvlr_knn_svm_transformed)
 
-    #Convert Weather Predictions to Boolean Values
+    #Define Variables for Machine Learning Model Scores
+    mvlr_score = 0.853
+    knn_score = 0.850
+    rf_score = 0.860
+    svm_score = 0.852
+
+    #Convert Weather Predictions to Boolean Values & Caclulate Overall Prediction
     if mvlr_predict == 1:
         mvlr = True
     else:
         mvlr = False
+
+        mvlr_score = mvlr_score * -1
 
     if knn_predict == 1:
         knn = True
     else:
         knn = False
 
+        knn_score = knn_score * -1
+
     if rf_predict == 1:
         rf = True
     else:
         rf = False
+
+        rf_score = rf_score * -1
 
     if svm_predict == 1:
         svm = True
     else:
         svm = False
 
-    #Determine Aggregate Weather Prediction
-    if mvlr == True and knn == True and rf == True and svm == True:
+        svm_score = svm_score * -1
+
+    total_score = mvlr_score + knn_score + rf_score + svm_score
+
+    if total_score > 0:
         agg = True
-    elif mvlr == False and knn == True and rf == True and svm == True:
-        agg = True
-    elif mvlr == True and knn == False and rf == True and svm == True:
-        agg = True
-    elif mvlr == True and knn == True and rf == False and svm == True:
-        agg = True
-    elif mvlr == True and knn == True and rf == True and svm == False:
-        agg = True
-    elif mvlr == True and knn == True and rf == False and svm == False:
-        agg = False
-    elif mvlr == True and knn == False and rf == True and svm == False:
-        agg = True
-    elif mvlr == True and knn == False and rf == False and svm == True:
-        agg = False
-    elif mvlr == False and knn == True and rf == True and svm == False:
-        agg = True
-    elif mvlr == False and knn == True and rf == False and svm == True:
-        agg = False
-    elif mvlr == False and knn == False and rf == True and svm == True:
-        agg = True
-    elif mvlr == True and knn == False and rf == False and svm == False:
-        agg = False
-    elif mvlr == False and knn == True and rf == False and svm == False:
-        agg = False
-    elif mvlr == False and knn == False and rf == True and svm == False:
-        agg = False
-    elif mvlr == False and knn == False and rf == False and svm == True:
-        agg = False
-    elif mvlr == False and knn == False and rf == False and svm == False:
+    else:
         agg = False
 
     #Create Dictioary of Machine Learning Model Predictions
