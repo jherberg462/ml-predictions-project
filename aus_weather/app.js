@@ -252,27 +252,13 @@ function getPrediction(minTemp, maxTemp, rainfall, evaporation, sunshine,
         url4 = `${windDir9}/${windDir3}`
         url = url1 + url2 + url3 + url4
         console.log(url)
+
+        var result = d3.json(url).then(function(result_data){
+            var mvlr = result_data.MVLR[0]
+            var knn = result_data.KNN[0]
+            var rf = result_data.RF[0]
+            var svm = result_data.SVM[0]
+            var agg = result_data.AGG[0]
+        })
     }
 
-function followers(start, end){
-    var followers_url = `http://localhost:5000/api/data/followers/${start}/${end}`
-    var b1 = d3.json(followers_url).then(function(followers_data){
-        var followers = followers_data[0]
-        
-        var trace = {
-            type: "scatter",
-            mode: "lines",
-            x: followers.dates,
-            y: followers.average_num_of_followers
-        }
-        var data = [trace]
-        var layout = {
-            title: `Average No of Followers - ${start} to ${end}`
-        }
-        Plotly.newPlot('num_followers', data, layout)
- 
-
-
-    })
- 
-}
