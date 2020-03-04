@@ -246,7 +246,7 @@ function getPrediction(minTemp, maxTemp, rainfall, evaporation, sunshine,
     windGustSpeed, windSpeed9, windSpeed3, humidity9, humidity3, pressure9, 
     pressure3, cloud9, cloud3, temp9, temp3, rainToday, windGustDir,
     windDir9, windDir3){
-        url1 = `http://localhost:5000/predict/${minTemp}/${rainfall}/${evaporation}/${sunshine}/`
+        url1 = `http://localhost:5000/predict/${minTemp}/${maxTemp}/${rainfall}/${evaporation}/${sunshine}/`
         url2 = `${windGustSpeed}/${windSpeed9}/${windSpeed3}/${humidity9}/${humidity3}/${pressure9}/`
         url3 = `${pressure3}/${cloud9}/${cloud3}/${temp9}/${temp3}/${rainToday}/${windGustDir}/`
         url4 = `${windDir9}/${windDir3}`
@@ -254,11 +254,23 @@ function getPrediction(minTemp, maxTemp, rainfall, evaporation, sunshine,
         console.log(url)
 
         var result = d3.json(url).then(function(result_data){
-            var mvlr = result_data.MVLR[0]
-            var knn = result_data.KNN[0]
-            var rf = result_data.RF[0]
-            var svm = result_data.SVM[0]
-            var agg = result_data.AGG[0]
+            var mvlr = result_data.MVLR
+            var knn = result_data.KNN
+            var rf = result_data.RF
+            var svm = result_data.SVM
+            var agg = result_data.AGG
+
+            console.log(rf)
+      
+            document.getElementById("overall").innerHTML = `Aggregate Prediction: ${agg}`
+            document.getElementById("mvlr").innerHTML = `MVLR: ${mvlr}`
+            document.getElementById("knn").innerHTML = `KNN: ${knn}`
+            document.getElementById("rf").innerHTML = `Random Forest: ${rf}`
+            document.getElementById("svm").innerHTML = `SVM: ${svm}`
+            document.getElementById("sum").innerHTML = 'Machine Learning Method and corresponding prediction'
+            
         })
     }
+
+
 
