@@ -13,7 +13,7 @@ from sklearn.svm import SVC
 import joblib
 
 #Define Flask App Environment
-app = Flask(__name__)
+app = flask.Flask(__name__)
 CORS(app)
 
 #Define Path for USA Fast Food Route
