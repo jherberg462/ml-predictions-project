@@ -1,6 +1,7 @@
 #Import Modules
 import flask
 from flask import request, jsonify, render_template, redirect, url_for
+from flask_cors import CORS
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -12,8 +13,8 @@ from sklearn.svm import SVC
 import joblib
 
 #Define Flask App Environment
-app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+app = Flask(__name__)
+CORS(app)
 
 #Define Path for USA Fast Food Route
 @app.route('/predict/<min_temp>/<max_temp>/<rainfall>/<evaporation>/<sunshine>/<wind_gust_speed>/<wind_speed_9>/<wind_speed_3>/<humidity_9>/<humidity_3>/<pressure_9>/<pressure_3>/<cloud_9>/<cloud_3>/<temp_9>/<temp_3>/<rain_today_b>/<wind_gust_dir>/<wind_dir_9>/<wind_dir_3>', methods = ['GET'])
