@@ -101,39 +101,39 @@ def weather_predict(min_temp, max_temp, rainfall, evaporation, sunshine, wind_gu
 
     #Convert Weather Predictions to Boolean Values & Caclulate Overall Prediction
     if mvlr_predict == 1:
-        mvlr = True
+        mvlr = 'Yes'
     else:
-        mvlr = False
+        mvlr = 'No'
 
         mvlr_score = mvlr_score * -1
 
     if knn_predict == 1:
-        knn = True
+        knn = 'Yes'
     else:
-        knn = False
+        knn = 'No'
 
         knn_score = knn_score * -1
 
     if rf_predict == 1:
-        rf = True
+        rf = 'Yes'
     else:
-        rf = False
+        rf = 'No'
 
         rf_score = rf_score * -1
 
     if svm_predict == 1:
-        svm = True
+        svm = 'Yes'
     else:
-        svm = False
+        svm = 'No'
 
         svm_score = svm_score * -1
 
     total_score = mvlr_score + knn_score + rf_score + svm_score
 
     if total_score > 0:
-        agg = True
+        agg = 'Yes'
     else:
-        agg = False
+        agg = 'No'
 
     #Create Dictioary of Machine Learning Model Predictions
     predictions = {'MVLR': mvlr, 'KNN': knn, 'RF': rf, 'SVM': svm, 'AGG': agg}
