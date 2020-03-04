@@ -23,7 +23,7 @@ CORS(app)
 def weather_predict(min_temp, max_temp, rainfall, evaporation, sunshine, wind_gust_speed, wind_speed_9, wind_speed_3, humidity_9, humidity_3, pressure_9, pressure_3, cloud_9, cloud_3, temp_9, temp_3, rain_today_b, wind_gust_dir, wind_dir_9, wind_dir_3):
 
     #Import Baseline Weather Data
-    weather_data = pd.read_csv('C:/Users/mjknj/Desktop/UNCC/Projects/Final Project/ml-predictions-project/aus_weather/weatherAUS_feature_engineer.csv')
+    weather_data = pd.read_csv('weatherAUS_feature_engineer.csv')
 
     #Split Weather Data into X & Y Sets
     x_values_1 =  weather_data.drop(['rain_tomorrow_b'], axis = 1)
