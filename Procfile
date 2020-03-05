@@ -1,1 +1,1 @@
-web: python aus_weather/app.py runserver 0.0.0.0:$PORT
+web: python aus_weather/App.py runserver 0.0.0.0:$PORT
