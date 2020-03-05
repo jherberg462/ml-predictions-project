@@ -24,7 +24,7 @@ def main():
 def js():
     return render_template('app.js')
 
-#Define Path for USA Fast Food Route
+#Define Path for Weather Predictions Route
 @app.route('/predict/<min_temp>/<max_temp>/<rainfall>/<evaporation>/<sunshine>/<wind_gust_speed>/<wind_speed_9>/<wind_speed_3>/<humidity_9>/<humidity_3>/<pressure_9>/<pressure_3>/<cloud_9>/<cloud_3>/<temp_9>/<temp_3>/<rain_today_b>/<wind_gust_dir>/<wind_dir_9>/<wind_dir_3>', methods = ['GET'])
 
 #Define Function for Dashboard Content
