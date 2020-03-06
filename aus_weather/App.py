@@ -31,7 +31,7 @@ def js():
 def weather_predict(min_temp, max_temp, rainfall, evaporation, sunshine, wind_gust_speed, wind_speed_9, wind_speed_3, humidity_9, humidity_3, pressure_9, pressure_3, cloud_9, cloud_3, temp_9, temp_3, rain_today_b, wind_gust_dir, wind_dir_9, wind_dir_3):
 
     #Import Baseline Weather Data
-    weather_data = pd.read_csv('aus_weather/weatherAUS_feature_engineer.csv')
+    weather_data = pd.read_csv('weatherAUS_feature_engineer.csv')
 
     #Split Weather Data into X & Y Sets
     x_values_1 =  weather_data.drop(['rain_tomorrow_b'], axis = 1)
@@ -90,10 +90,10 @@ def weather_predict(min_temp, max_temp, rainfall, evaporation, sunshine, wind_gu
     rf_transformed = x_scalar_2.transform(rf_input)
 
     #Import Machine Learning Models
-    mvlr_model = joblib.load('aus_weather/logistic.sav')
-    knn_model = joblib.load('aus_weather/knn.sav')
-    rf_model = joblib.load('aus_weather/random_forest_engineered.sav')
-    svm_model = joblib.load('aus_weather/svm.sav')
+    mvlr_model = joblib.load('logistic.sav')
+    knn_model = joblib.load('knn.sav')
+    rf_model = joblib.load('random_forest_engineered.sav')
+    svm_model = joblib.load('svm.sav')
 
     #Generate Weather Predictions from Machine Learning Models
     mvlr_predict = mvlr_model.predict(mvlr_knn_svm_transformed)
