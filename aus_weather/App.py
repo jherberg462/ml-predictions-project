@@ -11,6 +11,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 import joblib
+import os
 
 #Define Flask App Environment
 app = flask.Flask(__name__)
@@ -91,7 +92,7 @@ def weather_predict(min_temp, max_temp, rainfall, evaporation, sunshine, wind_gu
 
     #Import Machine Learning Models
     mvlr_model = joblib.load('aus_weather/logistic.sav')
-    knn_model = joblib.load('aus_weather/knn.sav')
+    knn_model = joblib.load('aus_weather/KNN.sav')
     rf_model = joblib.load('aus_weather/random_forest_engineered.sav')
     svm_model = joblib.load('aus_weather/svm.sav')
 
@@ -153,4 +154,8 @@ def weather_predict(min_temp, max_temp, rainfall, evaporation, sunshine, wind_gu
     return rain_prediction
 
 #Initialize Flask App
-app.run()
+# app.run()
+if __name__ == '__main__':
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
