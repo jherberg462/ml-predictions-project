@@ -1,4 +1,4 @@
-var predictions_url = 'http://localhost:5000/prediction/'
+var predictions_url = 'prediction/'
 //url for endpoint for our predictions
 //todo -- find documentation regarding how a flask endpoint will work on a heroku app
 
@@ -246,7 +246,7 @@ function getPrediction(minTemp, maxTemp, rainfall, evaporation, sunshine,
     windGustSpeed, windSpeed9, windSpeed3, humidity9, humidity3, pressure9, 
     pressure3, cloud9, cloud3, temp9, temp3, rainToday, windGustDir,
     windDir9, windDir3){
-        url1 = `http://localhost:5000/predict/${minTemp}/${maxTemp}/${rainfall}/${evaporation}/${sunshine}/`
+        url1 = `/predict/${minTemp}/${maxTemp}/${rainfall}/${evaporation}/${sunshine}/`
         url2 = `${windGustSpeed}/${windSpeed9}/${windSpeed3}/${humidity9}/${humidity3}/${pressure9}/`
         url3 = `${pressure3}/${cloud9}/${cloud3}/${temp9}/${temp3}/${rainToday}/${windGustDir}/`
         url4 = `${windDir9}/${windDir3}`
