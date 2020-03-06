@@ -4,7 +4,9 @@ The purpose of this project was to use various machine learning models and histo
 
 ## Questions
 
-
+1. What is the maximum score of each machine learning model?
+2. What are the rain predictions from each machine learning model?
+3. What is the overall rain prediction based on the model scores and individual model predictions?
 
 ## Datasets
 
