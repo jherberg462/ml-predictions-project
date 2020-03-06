@@ -18,7 +18,11 @@ The purpose of this project was to use various machine learning models and histo
 
 ### Machine Learning Model Development
 
-
+1. Import, clean, and transform the raw data.
+2. Build initial machine learning models with default parameters.
+3. Refine machine learning models with grid search.
+4. Use feature engineering to further transform cleaned dataset.
+5. Re-build machine learning models with feature engineered dataset.
 
 ### Flask App & Web Page Development
 
