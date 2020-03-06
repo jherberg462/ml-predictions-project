@@ -1,6 +1,6 @@
 # ml-predictions-project
 
-The purpose of this project was to use various machine learning models and historical weather data to predict whether rain will occur on a given day. First, Python with Pandas was used to clean the data and transform it for use with the four selected machine learning models: Logistic Regression, KNN, Random Forests, and SVM. Then, Python, with Pandas and Sklearn, was used to develop the machine learning models and refine the data using feature engineering. Finally, HTML, JavaScript, and Python with Flask were used to build an interactive web page for user queries of the machine learning models.
+The purpose of this project was to use various machine learning models and historical weather data to predict whether rain will occur on a given day. First, Python with Pandas was used to clean the data and transform it for use with the four selected machine learning models: Logistic Regression, KNN, Random Forests, and SVM. Python, with Pandas and Sklearn, was used to develop the machine learning models and refine the data using feature engineering. Finally, HTML, JavaScript, and Python with Flask were used to build an interactive web page for user queries of the machine learning models.
 
 ## Questions
 
@@ -15,6 +15,12 @@ The purpose of this project was to use various machine learning models and histo
 3. https://github.com/jherberg462/ml-predictions-project/blob/master/aus_weather/weatherAUS_feature_engineer.csv
 
 ## Tasks
+
+### Machine Learning Model Development
+
+
+
+### Flask App & Web Page Development
 
 
 
