@@ -35,4 +35,4 @@ The purpose of this project was to use various machine learning models and histo
 
 ## Results
 
-1. http://localhost:5000/ (Must also run the app.py file from the command line.)
+1. https://weather-predictions-ml.herokuapp.com/
