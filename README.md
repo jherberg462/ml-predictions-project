@@ -26,7 +26,12 @@ The purpose of this project was to use various machine learning models and histo
 
 ### Flask App & Web Page Development
 
-
+1. Build web page with drop-down menu for user inputs button to pass inputs to Flask application.
+2. Create Flask application route to accept user inputs from web page.
+3. Import feature engineered data and generate scaling factor for input data.
+4. Import machine learning models.
+5. Scale input data and pass scaled data to machine learning models.
+6. Output machine learning model results to web page for display.
 
 ## Results
 
