@@ -19,19 +19,19 @@ The purpose of this project was to use various machine learning models and histo
 ### Machine Learning Model Development
 
 1. Import, clean, and transform the raw data.
-2. Build initial machine learning models with default parameters.
-3. Refine machine learning models with grid search.
-4. Use feature engineering to further transform cleaned dataset.
-5. Re-build machine learning models with feature engineered dataset.
+2. Build the initial machine learning models with default parameters.
+3. Refine the machine learning models with grid search.
+4. Use feature engineering to further transform the cleaned dataset.
+5. Re-build the machine learning models with the feature engineered dataset.
 
 ### Flask App & Web Page Development
 
-1. Build web page with drop-down menu for user inputs button to pass inputs to Flask application.
-2. Create Flask application route to accept user inputs from web page.
-3. Import feature engineered data and generate scaling factor for input data.
-4. Import machine learning models.
-5. Scale input data and pass scaled data to machine learning models.
-6. Output machine learning model results to web page for display.
+1. Build a web page with a drop-down menu for user inputs and a button to pass the inputs to a Flask application.
+2. Create a Flask application route to accept the user inputs from the web page.
+3. Import the feature engineered data and generate a scaling factor for the input data.
+4. Import the machine learning models.
+5. Scale the input data and pass the scaled data to the machine learning models.
+6. Output the machine learning model results to the web page for display.
 
 ## Results
 
