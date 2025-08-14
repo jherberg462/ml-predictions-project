@@ -54,7 +54,7 @@ sklearn==0.0
 sqlparse==0.5.0
 terminado==0.8.3
 testpath==0.4.4
-tornado==6.4.1
+tornado==6.5
 traitlets==4.3.3
 wcwidth==0.1.8
 webencodings==0.5.1
